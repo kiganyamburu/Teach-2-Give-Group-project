@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #800080; /* Purple background */
+    background-color:lightblue;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -61,21 +61,21 @@ body {
 }
 
 .input-icon {
-    width: 24px; /* Adjust size as needed */
+    width: 24px; 
     height: 24px;
-    color: purple;
+    color: lightblue;
 }
 
 .form-group input {
     flex-grow: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid lightblue;
+    border-radius: 10px;
 }
 
 .register-button {
     padding: 10px;
-    background-color: purple;
+    background-color: lightblue;
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -86,7 +86,7 @@ body {
 }
 
 .register-button:hover {
-    background-color: #cc0000; /* Darker red on hover */
+    background-color: black;
 }
 
 .success-message {
@@ -97,9 +97,9 @@ body {
     transform: translate(-50%, -50%);
     background-color: #fff;
     padding: 20px;
-    border: 2px solid purple;
+    border: 2px solid lightblue;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 18px;
-    color: purple;
+    color: black
 }

@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (registrationForm) {
                 registrationForm.reset();
             }
-        }, 3000); // Message displayed for 3 seconds
+        }, 3000); 
     });
 });
