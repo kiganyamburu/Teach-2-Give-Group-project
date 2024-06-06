@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Project-M</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="fas fa-project-diagram"></span><span>Project-M</span></h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="#" id="dashboard-link" class="active"><span class="fas fa-tachometer-alt"></span><span>DashBoard</span></a>
+                </li>
+                <li>
+                    <a href="#" id="customers-link"><span class="fas fa-users"></span><span>Users</span></a>
+                </li>
+                <li>
+                    <a href="#" id="projects-link"><span class="fas fa-clipboard-list"></span><span>Projects</span></a>
+                </li>
+                <li>
+                    <a href="#"><span class="fas fa-user-circle"></span><span>Profile</span></a>
+                </li>
+                <li>
+                    <a href="#"><span class="fas fa-sign-out-alt"></span><span>Logout</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="fas fa-chevron-circle-left"></span>
+                </label>
+                Dashboard
+            </h2>
+            <div class="search-wrapper">
+                <span class="fas fa-search"></span>
+                <input type="search" placeholder="Search here" />
+            </div>
+            <div class="user-wrapper">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" height="30px" width="30px" alt="">
+                <div>
+                    <h4>Admin here</h4>
+                    <small>Super Admin</small>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="cards" id="dashboard-cards">
+                <div class="card-single">
+                    <div>
+                        <h1>54</h1>
+                        <span>Users</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-users"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>79</h1>
+                        <span>Projects</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-clipboard-list"></span>
+                    </div>
+                </div>
+                <div class="card-single">
+                    <div>
+                        <h1>124</h1>
+                        <span>Completed</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-check-circle"></span>
+                    </div>
+                </div>
+
+                <div class="card-single" id="create-project-card">
+                    <div>
+                        <h1>+</h1>
+                        <span style="color: white;">New Project</span>
+                    </div>
+                    <div>
+                        <span class="fas fa-plus" style="color: white;"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-grid" id="dashboard-content">
+                <div class="projects" id="your-projects-card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Your Projects</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width="100%" id="your-projects-table">
+                                    <thead>
+                                        <tr>
+                                            <td>Project Name</td>
+                                            <td>Date</td>
+                                            <td>Team</td>
+                                            <td>Status</td>
+                                            <td>Actions</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Projects will be dynamically inserted here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Projects</h3>
+                            <button>See all <span class=""></span></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <td>Project Title</td>
+                                            <td>Department</td>
+                                            <td>Status</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>UI/UX Design</td>
+                                            <td>UI Team</                                            td>
+                                            <td>
+                                                <span class="status purple"></span>
+                                                review
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Web development</td>
+                                            <td>Frontend</                                            td>
+                                            <td>
+                                                <span class="status pink"></span>
+                                                in progress
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ushop app</td>
+                                            <td>Mobile Team</                                            td>
+                                            <td>
+                                                <span class="status orange"></span>
+                                                pending
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Customers Card -->
+            <div class="customers" id="new-customers-card" style="display: none;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>New Users</h3>
+                        <button>See all <span class=""></span></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="customer">
+                            <div class="info">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="40px" height="40px" alt="">
+                                <div>
+                                    <h4>User here</h4>
+                                    <small>CEO Expert</small>
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <span class="fas fa-user-circle"></span>
+                                <span class="fas fa-comment"></span>
+                                <span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="customer">
+                            <div class="info">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="40px" height="40px" alt="">
+                                <div>
+                                    <h4>User here</h4>
+                                    <small>CEO Expert</small>
+                                </div>
+                            </div>
+                            <div class="contact">
+                                <span class="fas fa-user-circle"></span>
+                                <span class="fas fa-comment"></span>
+                                <span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat customer card-body for other customers -->
+                </div>
+            </div>
+
+            <!-- New Project Form -->
+            <div id="overlay" class="overlay hidden"></div>
+            <div class="slide-form hidden" id="new-project-form">
+                <div class="card-header">
+                    <h3>Create New Project</h3>
+                    <span class="close-btn fas fa-times" id="close-form" style="color: #35a6f7;"></span>
+                </div>
+                <div class="card-body">
+                    <form id="create-project">
+                        <label for="project-name">Project Name</label>
+                        <input type="text" id="project-name" required>
+                        
+                        <label for="project-date">Date</label>
+                        <input type="date" id="project-date" required>
+                        
+                        <label for="project-team">Team</label>
+                        <select id="project-team" required>
+                            <option value="">Select a team</option>
+                            <option value="backend">Backend</option>
+                            <option value="frontend">Frontend</option>
+                            <option value="ui/ux">UI/UX</option>
+                            <option value="cloud">Cloud</option>
+                            <option value="devops">DevOps</option>
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="networking">Networking</option>
+                        </select>
+                        
+                        <label for="project-status">Status</label>
+                        <input type="text" id="project-status" required>
+                        
+                        <button type="submit">Add Project</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../dist/admin.js"></script>
+</body>
+
+</html>

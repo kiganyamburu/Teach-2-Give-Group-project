@@ -1,0 +1,9 @@
+{
+  "server": {
+    "baseDir": "./html",
+    "routes": {
+      "/css": "./css",
+      "/dist": "./dist"
+    }
+  }
+}
