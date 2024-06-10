@@ -1,0 +1,41 @@
+### Register a new user
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpass",
+  "email": "test@example.com",
+  "role": "user"
+}
+
+###
+
+### Login a user and get token
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpass"
+}
+
+### Register a new admin user
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testadmin",
+  "password": "adminpass",
+  "email": "admin@sample.com",
+  "role": "superadmin"
+}
+
+### Login as admin
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "testadmin",
+  "password": "adminpass"
+}
