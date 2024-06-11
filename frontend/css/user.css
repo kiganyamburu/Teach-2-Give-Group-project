@@ -169,7 +169,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Reduced gap between cards */
+    gap: 1.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
 }
@@ -182,7 +182,7 @@ main {
     border-radius: 10px;
     cursor: pointer;
     width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-single div:first-child span {
@@ -202,20 +202,20 @@ main {
 .recent-grid {
     margin-top: 3.5rem;
     display: flex;
-    justify-content: center; /* Center the major cards horizontally */
+    justify-content: center;
     gap: 1rem;
 }
 
 .projects {
     flex: 1;
-    max-width: 400px; /* Reduced max-width of major cards */
+    max-width: 400px;
 }
 
 .card {
     background: var(--background-dark);
     border-radius: 5px;
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
@@ -245,11 +245,11 @@ main {
     align-items: center;
     background: var(--background-light);
     border-radius: 5px;
-    padding: 1rem 1.5rem; /* Increased padding */
-    margin-bottom: 1rem; /* Increased margin for separation */
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
     position: relative;
-    min-height: 100px; /* Increased height */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+    min-height: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project-card .project-date {
@@ -261,11 +261,11 @@ main {
 }
 
 .project-card p {
-    margin-left: 3rem; /* Increased margin to separate the date from the project name */
+    margin-left: 3rem;
 }
 
 .project-card .fas.fa-trash {
-    color: red; /* Set the color to red */
+    color: red;
     cursor: pointer;
 }
 
@@ -338,11 +338,11 @@ main {
     }
 
     .recent-grid {
-        flex-direction: column; /* Stack the major cards vertically */
+        flex-direction: column;
     }
 
     .projects {
-        max-width: 100%; /* Make the major cards take full width on smaller screens */
+        max-width: 100%;
     }
 }
 

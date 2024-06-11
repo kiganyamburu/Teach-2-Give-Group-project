@@ -80,8 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 localStorage.removeItem('token');
 
-                
-                // Navigate back to the previous page
+                               
                 window.history.back();
             });
     }

@@ -1,8 +1,8 @@
 export interface User {
   id?: number;
   username: string;
-  password: string; // Add this field
-  passwordHash?: string; // Make this field optional
+  password: string;
+  passwordHash?: string;
   email: string;
   role: string;
   createdAt?: Date;

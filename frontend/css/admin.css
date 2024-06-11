@@ -33,7 +33,7 @@
 }
 
 .sidebar-brand h2 {
-    display: flex; /* Use flexbox to align items */
+    display: flex;
     align-items: center;
 }
 
@@ -258,7 +258,7 @@ main {
     display: none;
 }
 
-/* Other styles remain the same */
+
 
 .overlay {
     position: fixed;
@@ -278,7 +278,7 @@ main {
 .slide-form {
     position: fixed;
     top: 0;
-    right: -100%; /* Start off-screen to the right */
+    right: -100%;
     width: 100%;
     max-width: 500px;
     height: 100%;
@@ -289,7 +289,7 @@ main {
 }
 
 .slide-form.show {
-    right: 0; /* Slide in */
+    right: 0;
 }
 
 .close-btn {
@@ -317,7 +317,7 @@ main {
 }
 
 .projects {
-    grid-column: 1 / -1; /* Make the projects card span the entire width */
+    grid-column: 1 / -1;
 }
 
 table {

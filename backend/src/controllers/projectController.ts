@@ -1,22 +1,21 @@
-// src/controllers/projectController.ts
 import { Request, Response } from 'express';
 import sql from 'mssql';
 import { pool } from '../config/dbConfig';
 import { Project } from '../interfaces/projectInterface';
 import { RequestWithUser } from '../interfaces/RequestWithUser';
 
-// Get all projects
+
 export const getProjects = async (req: Request, res: Response): Promise<void> => {
   try {
     const result = await pool.request().query('SELECT * FROM Projects');
     res.status(200).json(result.recordset);
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Get a single project by ID
+
 export const getProjectById = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -27,12 +26,12 @@ export const getProjectById = async (req: Request, res: Response): Promise<void>
       res.status(404).send('Project not found');
     }
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Create a new project
+
 export const createProject = async (req: Request, res: Response): Promise<void> => {
   try {
     const { name, description, status, assignedTo }: Project = req.body;
@@ -44,12 +43,12 @@ export const createProject = async (req: Request, res: Response): Promise<void> 
       .query('INSERT INTO Projects (Name, Description, Status, AssignedTo) VALUES (@Name, @Description, @Status, @AssignedTo)');
     res.status(201).send('Project created successfully');
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Update a project by ID
+
 export const updateProject = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -67,12 +66,12 @@ export const updateProject = async (req: Request, res: Response): Promise<void> 
       res.status(404).send('Project not found');
     }
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Delete a project by ID
+
 export const deleteProject = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -83,12 +82,12 @@ export const deleteProject = async (req: Request, res: Response): Promise<void> 
       res.status(404).send('Project not found');
     }
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Assign a task to a user or project
+
 export const assignTask = async (req: RequestWithUser, res: Response): Promise<void> => {
   try {
     if (req.user?.role !== 'superadmin') {
@@ -107,19 +106,19 @@ export const assignTask = async (req: RequestWithUser, res: Response): Promise<v
       res.status(404).send('Project or user not found');
     }
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// View tasks assigned to a user
+
 export const getUserTasks = async (req: Request, res: Response): Promise<void> => {
   try {
     const { userId } = req.params;
     const result = await pool.request().input('UserId', sql.Int, userId).query('SELECT * FROM Projects WHERE AssignedTo = @UserId');
     res.status(200).json(result.recordset);
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };

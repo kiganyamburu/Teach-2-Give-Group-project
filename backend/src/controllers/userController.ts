@@ -4,18 +4,18 @@ import sql from 'mssql';
 import { pool } from '../config/dbConfig';
 import { User } from '../interfaces/userInterface';
 
-// Get all users
+
 export const getUsers = async (req: Request, res: Response): Promise<void> => {
   try {
     const result = await pool.request().query('SELECT * FROM Users');
     res.status(200).json(result.recordset);
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Get a single user by ID
+
 export const getUserById = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -26,12 +26,12 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
       res.status(404).send('User not found');
     }
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Create a new user
+
 export const createUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { username, password, email, role }: User = req.body;
@@ -46,12 +46,12 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
 
     res.status(201).send('User created successfully');
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Update a user by ID
+
 export const updateUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -72,12 +72,12 @@ export const updateUser = async (req: Request, res: Response): Promise<void> => 
       res.status(404).send('User not found');
     }
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };
 
-// Delete a user by ID
+
 export const deleteUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const { id } = req.params;
@@ -88,7 +88,7 @@ export const deleteUser = async (req: Request, res: Response): Promise<void> => 
       res.status(404).send('User not found');
     }
   } catch (err) {
-    const error = err as Error; // Type assertion
+    const error = err as Error;
     res.status(500).send(error.message);
   }
 };

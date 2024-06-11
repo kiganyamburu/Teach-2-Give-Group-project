@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data[key] = value.toString();
             });
 
-            console.log('Sign Up Form Data:', data); // Log form data before sending
+            console.log('Sign Up Form Data:', data);
 
             try {
                 const response = await fetch('http://localhost:3000/api/auth/register', {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 data[key] = value.toString();
             });
         
-            console.log('Sign In Form Data:', data); // Log form data before sending
+            console.log('Sign In Form Data:', data);
         
             try {
                 const response = await fetch('http://localhost:3000/api/auth/login', {
@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
                 console.log(result);
         
-                // Check if login was successful
+
                 if (response.ok) {
-                    // Save the token to local storage or cookies
+                    
                     localStorage.setItem('token', result.token);
         
-                    // Redirect based on user role
+                    
                     if (result.role === 'superadmin') {
                         window.location.href = 'http://localhost:3001/admin-dashboard.html';
                     } else {

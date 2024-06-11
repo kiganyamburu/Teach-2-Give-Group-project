@@ -5,7 +5,7 @@ import sql from 'mssql';
 import { pool, connectPool } from '../config/dbConfig';
 import { User } from '../interfaces/userInterface';
 
-// Register a new user
+
 export const register = async (req: Request, res: Response): Promise<Response> => {
   try {
     console.log('Register Request Body:', req.body);
@@ -14,7 +14,7 @@ export const register = async (req: Request, res: Response): Promise<Response> =
 
     await connectPool();
 
-    // Check if a user with the provided email already exists
+ 
     const checkUserRequest = pool.request();
     const checkUserResult = await checkUserRequest
       .input('Email', sql.NVarChar, email)
@@ -39,23 +39,22 @@ export const register = async (req: Request, res: Response): Promise<Response> =
   }
 };
 
-// Login a user
-// Login a user
+
 export const login = async (req: Request, res: Response): Promise<Response> => {
   try {
     console.log('Login Request Body:', req.body);
-    const { email, password } = req.body; // Change this line to use email instead of username
+    const { email, password } = req.body;
 
     await connectPool();
 
     const request = pool.request();
     const result = await request
-      .input('Email', sql.NVarChar, email) // Change this line to use email instead of username
-      .query('SELECT * FROM Users WHERE Email = @Email'); // Change this line to use email instead of username
+      .input('Email', sql.NVarChar, email)
+      .query('SELECT * FROM Users WHERE Email = @Email');
 
     if (result.recordset.length === 0) {
-      console.log('No user found with the provided email'); // Change this line to say email instead of username
-      return res.status(400).send({ message: 'Invalid email or password.' }); // Change this line to say email instead of username
+      console.log('No user found with the provided email');
+      return res.status(400).send({ message: 'Invalid email or password.' });
     }
 
     const user: User = {
@@ -67,13 +66,13 @@ export const login = async (req: Request, res: Response): Promise<Response> => {
 
     if (!user.passwordHash) { 
       console.log('User does not have a password hash');
-      return res.status(400).send({ message: 'Invalid email or password.' }); // Change this line to say email instead of username
+      return res.status(400).send({ message: 'Invalid email or password.' });
     }
 
     const validPassword = await bcrypt.compare(password, user.passwordHash);
     if (!validPassword) {
       console.log('Password does not match');
-      return res.status(400).send({ message: 'Invalid email or password.' }); // Change this line to say email instead of username
+      return res.status(400).send({ message: 'Invalid email or password.' });
     }
 
     const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET!, {

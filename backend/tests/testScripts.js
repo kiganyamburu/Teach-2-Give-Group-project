@@ -2,10 +2,10 @@ const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Base URL of your API
+
 const baseUrl = 'http://localhost:3000/api';
 
-// Function to register a new user
+
 const registerUser = async (username, password, email, role) => {
     try {
         const response = await axios.post(`${baseUrl}/auth/register`, {
@@ -20,7 +20,7 @@ const registerUser = async (username, password, email, role) => {
     }
 };
 
-// Function to login a user
+
 const loginUser = async (username, password) => {
     try {
         const response = await axios.post(`${baseUrl}/auth/login`, {
@@ -34,7 +34,7 @@ const loginUser = async (username, password) => {
     }
 };
 
-// Function to create a new project
+
 const createProject = async (token, name, description, status, assignedTo) => {
     try {
         const response = await axios.post(`${baseUrl}/projects`, {
@@ -51,7 +51,7 @@ const createProject = async (token, name, description, status, assignedTo) => {
     }
 };
 
-// Function to get all projects
+
 const getAllProjects = async (token) => {
     try {
         const response = await axios.get(`${baseUrl}/projects`, {
@@ -63,7 +63,7 @@ const getAllProjects = async (token) => {
     }
 };
 
-// Function to update a project
+
 const updateProject = async (token, projectId, name, description, status, assignedTo) => {
     try {
         const response = await axios.put(`${baseUrl}/projects/${projectId}`, {
@@ -80,7 +80,7 @@ const updateProject = async (token, projectId, name, description, status, assign
     }
 };
 
-// Function to delete a project
+
 const deleteProject = async (token, projectId) => {
     try {
         const response = await axios.delete(`${baseUrl}/projects/${projectId}`, {
@@ -92,14 +92,13 @@ const deleteProject = async (token, projectId) => {
     }
 };
 
-// Run all tests
+
 const runTests = async () => {
-    // Register a new admin
+
     await registerUser('newadmin', 'newadminpass', 'newadmin@example.com', 'superadmin');
     const adminToken = await loginUser('newadmin', 'newadminpass');
     console.log(`Admin Token: ${adminToken}`);
 
-    // Register a new user
     await registerUser('newuser', 'newuserpass', 'newuser@example.com', 'user');
     const userToken = await loginUser('newuser', 'newuserpass');
     console.log(`User Token: ${userToken}`);
