@@ -1,0 +1,10 @@
+{
+    "rest-client.environmentVariables": {
+      "$shared": {
+        "baseUrl": "http://localhost:3000"
+      },
+      "local": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTc5Nzc5MTgsImV4cCI6MTcxNzk4MTUxOH0.ZfhfxC6YwYFNmhcFQny7hhBgL3zUsJRz1sxNxXPjscs"
+      }
+    }
+  }  
