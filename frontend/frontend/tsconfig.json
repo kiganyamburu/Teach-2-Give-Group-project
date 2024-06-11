@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",          // Output directory for compiled JavaScript
+        "sourceMap": true,           // Generate source maps for debugging
+        "strict": true,              // Enable all strict type-checking options
+        "esModuleInterop": true,     // Enables emit interoperability between CommonJS and ES Modules
+        "target": "es6",             // Set the target ECMAScript version
+        "module": "commonjs",        // Set the module system
+        "moduleResolution": "node",  // Use Node.js-style module resolution
+        "allowJs": true              // Allow JavaScript files to be compiled
+    },
+    "include": [
+        "./src/**/*.ts"               // Include all TypeScript files in the src directory
+    ],
+    "exclude": [
+        "node_modules"               // Exclude the node_modules directory
+    ]
+}
